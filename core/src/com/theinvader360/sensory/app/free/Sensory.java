@@ -9,6 +9,7 @@ public class Sensory extends Game {
   public static final float HEIGHT = 480f;
   public ActionResolver actionResolver;
   public MenuScreen menuScreen;
+  public AboutScreen aboutScreen;
   public GameScreen gameScreen;
   
   public Sensory(ActionResolver actionResolver) {
@@ -20,6 +21,7 @@ public class Sensory extends Game {
     Assets.instance.init();
     Gdx.input.setCatchBackKey(true);
     menuScreen = new MenuScreen(this);
+    aboutScreen = new AboutScreen(this);
     gameScreen = new GameScreen(this);
     setScreen(menuScreen);
   }
@@ -33,6 +35,7 @@ public class Sensory extends Game {
   public void dispose() {
     Assets.instance.dispose();
     menuScreen.dispose();
+    aboutScreen.dispose();
     gameScreen.dispose();
   }
   

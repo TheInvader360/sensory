@@ -1,5 +1,7 @@
 package com.theinvader360.sensory.app.free.android;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import com.badlogic.gdx.backends.android.AndroidApplication;
@@ -17,6 +19,13 @@ public class AndroidLauncher extends AndroidApplication implements ActionResolve
     config.useCompass = false;
     config.useImmersiveMode = true;
     initialize(new Sensory(this), config);
+  }
+  
+  @Override
+  public void openUri(String uri) {
+    Uri myUri = Uri.parse(uri);
+    Intent intent = new Intent(Intent.ACTION_VIEW, myUri);
+    startActivity(intent);
   }
   
   @Override

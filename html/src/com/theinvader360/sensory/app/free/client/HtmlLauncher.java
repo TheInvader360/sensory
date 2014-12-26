@@ -20,7 +20,13 @@ public class HtmlLauncher extends GwtApplication implements ActionResolver {
   }
   
   @Override
+  public void openUri(String uri) {
+    // TODO
+  }
+  
+  @Override
   public void quitApplication() {
     // TODO
   }
+
 }

@@ -34,6 +34,12 @@ public class MenuScreen implements Screen {
         sensory.setScreen(sensory.gameScreen);
       }
     });
+    TextButton aboutButton = new TextButton("About", Assets.instance.skins.uiSkin);
+    aboutButton.addListener(new ClickListener() {
+      public void clicked(InputEvent event, float x, float y) {
+        sensory.setScreen(sensory.aboutScreen);
+      }
+    });
     TextButton quitButton = new TextButton("Quit", Assets.instance.skins.uiSkin);
     quitButton.addListener(new ClickListener() {
       public void clicked(InputEvent event, float x, float y) {
@@ -41,9 +47,11 @@ public class MenuScreen implements Screen {
       }
     });
     table.row();
-    table.add(playButton).size(300, 100).colspan(5).fill();
+    table.add(playButton).size(300, 100).fill();
     table.row();
-    table.add(quitButton).size(300, 30).colspan(5).fill();
+    table.add(aboutButton).size(300, 30).fill();
+    table.row();
+    table.add(quitButton).size(300, 30).fill();
     stage.addActor(table);
   }
   

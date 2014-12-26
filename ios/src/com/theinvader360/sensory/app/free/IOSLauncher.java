@@ -22,6 +22,11 @@ public class IOSLauncher extends IOSApplication.Delegate implements ActionResolv
   }
   
   @Override
+  public void openUri(String uri) {
+    // TODO
+  }
+
+  @Override
   public void quitApplication() {
     // TODO
   }
